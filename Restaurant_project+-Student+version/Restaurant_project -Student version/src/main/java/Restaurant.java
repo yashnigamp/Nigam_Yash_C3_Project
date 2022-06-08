@@ -70,4 +70,7 @@ public class Restaurant {
         return name;
     }
 
+    public int getOrderValue(List<String> items){
+        return -1;
+    }
 }

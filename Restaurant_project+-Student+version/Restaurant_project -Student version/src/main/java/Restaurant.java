@@ -35,7 +35,7 @@ public class Restaurant {
         return this.menu;
     }
 
-    private Item findItemByName(String itemName) {
+    public Item findItemByName(String itemName) {
         for (Item item : menu) {
             if (item.getName().equals(itemName))
                 return item;
@@ -71,6 +71,10 @@ public class Restaurant {
     }
 
     public int getOrderValue(List<String> items){
-        return -1;
+        int total = 0;
+        for(String item: items){
+            total+= findItemByName(item).getPrice();
+        }
+        return total;
     }
 }
